@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router-dom'
 import Header from '../Header'
 import Footer from '../Footer'
+import './style.scss'
 
 function Layout() {
   return (
     <>
       <Header />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </>
   )
