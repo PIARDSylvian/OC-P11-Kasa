@@ -43,3 +43,15 @@
     }
   }
 }
+
+.logements_wrapper {
+  border-radius: map-get($radius, header);
+  background-color: map-get($background-color, primary);
+  padding: calc(map-get($radius, header) * 2);
+
+  @include mobile {
+    padding: 0;
+    background-color: unset;
+    border-radius: map-get($radius, secondary);
+  }
+}
