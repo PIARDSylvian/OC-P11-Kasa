@@ -1,0 +1,33 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+.logement {
+  @include flex(null, null, null, null, flex-end);
+  border-radius: map-get($radius, secondary);
+  background-color: #ff6060;
+  padding: map-get($margin, secondary);
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: map-get($radius, secondary);
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5046393557422969) 0%,
+      rgba(0, 0, 0, 0.40379901960784315) 25%,
+      rgba(0, 212, 255, 0) 100%
+    );
+  }
+
+  h1 {
+    z-index: 1;
+    line-height: 1.5;
+    font-size: map-get($font-size, text);
+    color: map-get($font-color, secondary);
+  }
+}
