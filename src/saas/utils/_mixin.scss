@@ -1,0 +1,30 @@
+@mixin mobile {
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @content;
+  }
+}
+
+@mixin flex(
+  $flex-direction,
+  $flex-wrap,
+  $align-content,
+  $justify-content,
+  $align-items
+) {
+  display: flex;
+  @if $flex-direction {
+    flex-direction: $flex-direction;
+  }
+  @if $flex-wrap {
+    flex-wrap: $flex-wrap;
+  }
+  @if $align-content {
+    align-content: $align-content;
+  }
+  @if $justify-content {
+    justify-content: $justify-content;
+  }
+  @if $align-items {
+    align-items: $align-items;
+  }
+}

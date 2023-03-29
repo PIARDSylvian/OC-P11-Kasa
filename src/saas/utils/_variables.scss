@@ -1,0 +1,33 @@
+$font-color: (
+  primary: #ff6060,
+  secondary: white,
+);
+
+$font-size: (
+  nav: 24px,
+  header: 48px,
+  title: 36px,
+  text: 18px,
+  nav-mobil: 12px,
+  header-mobil: 24px,
+  title-mobil: 28px,
+  text-mobil: 12px,
+);
+
+$background-color: (
+  primary: #f7f7f7,
+  secondary: #c4c4c4,
+  ternary: black,
+);
+
+$margin: (
+  primary: 40px,
+  secondary: 20px,
+  primary-mobil: 20px,
+  secondary-mobil: 15px,
+);
+
+$breakpoints: (
+  tab: 1200px,
+  mobile: 800px,
+);
