@@ -4,7 +4,11 @@
   background-color: map-get($background-color, ternary);
   text-align: center;
   color: map-get($font-color, secondary);
-  padding: calc(map-get($margin, secondary-mobil) * 2);
+  margin-top: calc(map-get($margin, secondary-mobil) * 2);
+
+  p {
+    padding-bottom: calc(map-get($margin, secondary-mobil) * 2);
+  }
 }
 
 .logo {
