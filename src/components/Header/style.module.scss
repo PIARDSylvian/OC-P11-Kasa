@@ -2,10 +2,10 @@
 @import '../../saas/utils/mixin';
 
 .header {
-  padding: map-get($margin, primary) 100px map-get($margin, secondary);
+  padding: map-get($margin, primary) 0 calc(map-get($margin, secondary) * 3);
   @include flex(null, null, null, space-between, center);
   @include mobile {
-    padding: map-get($margin, primary-mobil);
+    padding: map-get($margin, primary-mobil) 0;
   }
 }
 

@@ -1,0 +1,37 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+section > header {
+  h1 {
+    position: absolute;
+    z-index: 1;
+    color: map-get($font-color, secondary);
+    font-size: map-get($font-size, header);
+
+    @include mobile {
+      padding-left: map-get($margin, primary-mobil);
+      font-size: map-get($font-size, header-mobil);
+      width: 59%;
+    }
+  }
+}
+
+.logements_wrapper {
+  border-radius: map-get($radius, header);
+  background-color: map-get($background-color, primary);
+  padding: calc(map-get($radius, header) * 2);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: calc(map-get($radius, header) * 2);
+  grid-auto-rows: minmax(350px, auto);
+
+  @include mobile {
+    padding: 0;
+    background-color: unset;
+    border-radius: map-get($radius, secondary);
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: map-get($margin, primary-mobil);
+    grid-auto-rows: minmax(255px, auto);
+  }
+}

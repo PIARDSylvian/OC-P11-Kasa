@@ -3,13 +3,12 @@
 @import '../../saas/utils/variables';
 @import '../../saas/utils/mixin';
 
-header,
-main,
-footer {
+#root {
   font-family: 'Montserrat';
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 100px;
+  box-sizing: border-box;
 
   @include mobile {
     padding: 0 map-get($margin, primary-mobil);
