@@ -1,0 +1,14 @@
+@import '../../saas/utils/variables';
+
+.footer {
+  background-color: map-get($background-color, ternary);
+  text-align: center;
+  color: map-get($font-color, secondary);
+  padding: calc(map-get($margin, secondary-mobil) * 2);
+}
+
+.logo {
+  height: 40px;
+  margin: calc(map-get($margin, secondary-mobil) * 2);
+  filter: brightness(3);
+}

@@ -1,8 +1,17 @@
 @import 'reset-css/sass/reset';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
 
 header,
 main,
 footer {
+  font-family: 'Montserrat';
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 100px;
+
+  @include mobile {
+    padding: 0 map-get($margin, primary-mobil);
+  }
 }
