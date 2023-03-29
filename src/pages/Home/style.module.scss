@@ -1,35 +1,7 @@
 @import '../../saas/utils/variables';
 @import '../../saas/utils/mixin';
 
-.header {
-  @include flex(null, null, null, center, center);
-  background: 50% 50% url('../../assets/home-header.jpg');
-  border-radius: map-get($radius, header);
-  height: 223px;
-  width: 100%;
-  padding: 0;
-  margin-bottom: map-get($margin, primary);
-
-  &::after {
-    content: '';
-    border-radius: map-get($radius, header);
-    backdrop-filter: brightness(0.7);
-    width: 100%;
-    height: 100%;
-  }
-
-  @include mobile {
-    justify-content: flex-start;
-    border-radius: map-get($radius, secondary);
-    height: 111px;
-    margin-bottom: map-get($margin, primary-mobil);
-
-    &::after {
-      content: '';
-      border-radius: map-get($radius, secondary);
-    }
-  }
-
+section > header {
   h1 {
     position: absolute;
     z-index: 1;
@@ -49,9 +21,17 @@
   background-color: map-get($background-color, primary);
   padding: calc(map-get($radius, header) * 2);
 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: calc(map-get($radius, header) * 2);
+  grid-auto-rows: minmax(350px, auto);
+
   @include mobile {
     padding: 0;
     background-color: unset;
     border-radius: map-get($radius, secondary);
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: map-get($margin, primary-mobil);
+    grid-auto-rows: minmax(255px, auto);
   }
 }
