@@ -52,7 +52,7 @@
 
   &.open {
     height: auto;
-    max-height: max-content;
+    max-height: 9999vh;
     opacity: 1;
     background-color: map-get($background-color, primary);
     padding-top: calc(map-get($margin, secondary) * 2);
