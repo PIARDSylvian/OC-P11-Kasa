@@ -2,7 +2,7 @@
 @import '../../saas/utils/mixin';
 
 .logement {
-  @include flex(null, null, null, null, flex-end);
+  @include flex($align-items: flex-end);
   border-radius: map-get($radius, secondary);
   padding: map-get($margin, secondary);
   position: relative;

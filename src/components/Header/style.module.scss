@@ -3,14 +3,14 @@
 
 .header {
   padding: map-get($margin, primary) 0 calc(map-get($margin, secondary) * 3);
-  @include flex(null, null, null, space-between, center);
+  @include flex($justify-content: space-between, $align-items: center);
   @include mobile {
     padding: map-get($margin, primary-mobil) 0;
   }
 }
 
 .nav_list {
-  @include flex(null, null, null, space-between, center);
+  @include flex($justify-content: space-between, $align-items: center);
 
   a {
     color: map-get($font-color, primary);
