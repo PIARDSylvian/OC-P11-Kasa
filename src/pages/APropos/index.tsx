@@ -1,9 +1,14 @@
+import { useEffect } from 'react'
 import Collapse from '../../components/Collapse'
 import style from './style.module.scss'
 import Banner from '../../components/Banner'
 import Cover from '../../assets/a-propos-header.jpg'
 
 function APropos() {
+  useEffect(() => {
+    document.title = 'A-propos - Kasa'
+  }, [])
+
   return (
     <>
       <Banner height={223} mobileHeight={111} cover={Cover}>
