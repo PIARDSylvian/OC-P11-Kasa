@@ -4,7 +4,7 @@
   background-color: map-get($background-color, ternary);
   text-align: center;
   color: map-get($font-color, secondary);
-  margin-top: calc(map-get($margin, secondary-mobil) * 2);
+  margin: calc(map-get($margin, secondary-mobil) * 2) -100px 0;
 
   p {
     padding-bottom: calc(map-get($margin, secondary-mobil) * 2);
