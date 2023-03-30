@@ -1,5 +1,5 @@
 @import 'reset-css/sass/reset';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import '../../saas/utils/variables';
 @import '../../saas/utils/mixin';
 
@@ -9,6 +9,18 @@
   margin: 0 auto;
   padding: 0 100px;
   box-sizing: border-box;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  main {
+    flex: 1;
+    display: flex;
+  }
+
+  section {
+    width: 100%;
+  }
 
   @include mobile {
     padding: 0 map-get($margin, primary-mobil);
