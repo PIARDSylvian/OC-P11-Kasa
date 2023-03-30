@@ -1,0 +1,36 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+.section {
+  text-align: center;
+  color: map-get($font-color, primary);
+
+  h1 {
+    font-size: 288px;
+
+    @include mobile {
+      margin-top: calc(map-get($margin, primary) * 3);
+      font-size: 96px;
+    }
+  }
+
+  p {
+    margin-top: calc(map-get($margin, secondary) * 3);
+    font-size: map-get($font-size, title);
+
+    @include mobile {
+      font-size: map-get($font-size, text);
+    }
+  }
+
+  a {
+    display: block;
+    margin-top: calc(map-get($margin, secondary) * 4);
+    font-size: map-get($font-size, text);
+    color: map-get($font-color, primary);
+
+    @include mobile {
+      font-size: map-get($font-size, nav-mobil);
+    }
+  }
+}

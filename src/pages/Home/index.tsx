@@ -11,7 +11,7 @@ function Home() {
   }, [])
 
   return (
-    <section>
+    <section className={style.section}>
       <Banner height={223} mobileHeight={111} cover={cover}>
         <h1>Chez vous, partout et ailleurs</h1>
       </Banner>

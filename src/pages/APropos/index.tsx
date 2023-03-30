@@ -10,7 +10,7 @@ function APropos() {
   }, [])
 
   return (
-    <>
+    <section>
       <Banner height={223} mobileHeight={111} cover={Cover}>
         {null}
       </Banner>
@@ -46,7 +46,7 @@ function APropos() {
           ]}
         />
       </div>
-    </>
+    </section>
   )
 }
 
