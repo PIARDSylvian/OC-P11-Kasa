@@ -1,9 +1,14 @@
 import Collapse from '../../components/Collapse'
 import style from './style.module.scss'
+import Banner from '../../components/Banner'
+import Cover from '../../assets/a-propos-header.jpg'
 
 function APropos() {
   return (
     <>
+      <Banner height={223} mobileHeight={111} cover={Cover}>
+        {null}
+      </Banner>
       <div className={style.collapse_wrapper}>
         <Collapse
           collapseTitle="Fiabilité"
