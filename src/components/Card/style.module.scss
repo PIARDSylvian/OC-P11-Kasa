@@ -4,7 +4,6 @@
 .logement {
   @include flex(null, null, null, null, flex-end);
   border-radius: map-get($radius, secondary);
-  background-color: #ff6060;
   padding: map-get($margin, secondary);
   position: relative;
 

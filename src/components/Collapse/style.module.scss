@@ -1,0 +1,8 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+.button {
+  background-color: map-get($font-color, primary);
+  display: block;
+  width: 100%;
+}
