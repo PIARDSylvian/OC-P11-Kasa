@@ -2,20 +2,24 @@
 @import '../../saas/utils/mixin';
 
 .section {
-  text-align: center;
+  @include flex(
+    $flex-direction: column,
+    $justify-content: space-around,
+    $align-items: center
+  );
   color: map-get($font-color, primary);
+  text-align: center;
 
   h1 {
     font-size: 288px;
+    font-weight: bold;
 
     @include mobile {
-      margin-top: calc(map-get($margin, primary) * 3);
       font-size: 96px;
     }
   }
 
   p {
-    margin-top: calc(map-get($margin, secondary) * 3);
     font-size: map-get($font-size, title);
 
     @include mobile {
@@ -24,8 +28,6 @@
   }
 
   a {
-    display: block;
-    margin-top: calc(map-get($margin, secondary) * 4);
     font-size: map-get($font-size, text);
     color: map-get($font-color, primary);
 
