@@ -1,0 +1,70 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+.collapse_button {
+  @include flex($justify-content: space-between);
+  font-size: map-get($font-size, text);
+  background-color: map-get($font-color, primary);
+  width: 100%;
+  border: 0;
+  border-radius: map-get($radius, secondary);
+  padding: map-get($margin, secondary);
+  color: map-get($font-color, secondary);
+
+  &::after {
+    content: '>';
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: all 1s ease;
+    transition: 1s;
+  }
+
+  &.open::after {
+    transform: rotate(-90deg);
+  }
+
+  @include mobile {
+    border-radius: map-get($radius, mobil);
+    padding: map-get($radius, secondary);
+  }
+}
+
+.collapse_content {
+  font-size: map-get($font-size, text);
+  position: relative;
+  z-index: -1;
+  margin-top: calc(0px - map-get($margin, secondary));
+  padding: map-get($margin, secondary) map-get($margin, secondary) 0;
+  max-height: 0;
+  transition: 1s;
+  opacity: 0.5;
+  color: map-get($font-color, primary);
+  border-radius: 0 0 map-get($radius, secondary) map-get($radius, secondary);
+
+  @include mobile {
+    border-radius: map-get($radius, mobil);
+    padding: map-get($radius, secondary);
+  }
+
+  li {
+    display: none;
+  }
+
+  &.open {
+    height: auto;
+    max-height: 9999vh;
+    opacity: 1;
+    background-color: map-get($background-color, primary);
+    padding-top: calc(map-get($margin, secondary) * 2);
+    padding-bottom: map-get($margin, secondary);
+
+    @include mobile {
+      padding-top: calc(map-get($radius, secondary) * 3);
+      padding-bottom: map-get($radius, secondary);
+    }
+
+    li {
+      display: block;
+    }
+  }
+}

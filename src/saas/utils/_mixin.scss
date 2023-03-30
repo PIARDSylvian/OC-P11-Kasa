@@ -5,11 +5,11 @@
 }
 
 @mixin flex(
-  $flex-direction,
-  $flex-wrap,
-  $align-content,
-  $justify-content,
-  $align-items
+  $flex-direction: null,
+  $flex-wrap: null,
+  $align-content: null,
+  $justify-content: null,
+  $align-items: null
 ) {
   display: flex;
   @if $flex-direction {

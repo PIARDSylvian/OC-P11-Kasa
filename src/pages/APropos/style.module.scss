@@ -1,0 +1,14 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+.collapse_wrapper {
+  padding: 0 120px map-get($margin, secondary);
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @include mobile {
+    padding: 0 0 map-get($margin, secondary);
+  }
+}

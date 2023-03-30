@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import style from './style.module.scss'
 import Banner from '../../components/Banner'
 import Card from '../../components/Card'
@@ -5,6 +6,10 @@ import data from '../../../backend/data.json'
 import cover from '../../assets/home-header.jpg'
 
 function Home() {
+  useEffect(() => {
+    document.title = 'Accueil - Kasa'
+  }, [])
+
   return (
     <section>
       <Banner height={223} mobileHeight={111} cover={cover}>
