@@ -1,0 +1,63 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+.carrousel {
+  display: flex;
+  position: relative;
+  max-height: 415px;
+  border-radius: map-get($radius, header);
+  overflow: hidden;
+
+  @include mobile {
+    border-radius: map-get($radius, secondary);
+    max-height: 255px;
+  }
+
+  button {
+    position: absolute;
+    height: 100%;
+    background: none;
+    border: none;
+    color: map-get($font-color, secondary);
+    font-weight: bold;
+    font-size: calc(map-get($font-size, header) * 1.8);
+    cursor: pointer;
+
+    @include mobile {
+      font-size: map-get($font-size, header-mobil);
+    }
+
+    &:last-child {
+      right: 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    width: 100%;
+
+    p {
+      position: absolute;
+      bottom: map-get($radius, header);
+      font-weight: bold;
+      color: map-get($font-color, secondary);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.carrouselItem {
+  display: flex;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
