@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import style from './style.module.scss'
 import React from 'react'
 
@@ -15,6 +15,14 @@ function Carrousel({ album }: CarrouselProps) {
       ? setIndex(album.length - 1)
       : setIndex(index)
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      ChangeIndex(index + 1)
+    }, 3000)
+    return () => {
+      clearInterval(interval)
+    }
+  }, [index])
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key == 'Tab' || event.key == 'Shift') return
     event.preventDefault()
