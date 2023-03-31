@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLoaderData } from 'react-router-dom'
+import Carrousel from '../../components/Carrousel'
 
 type loader = {
   cover: string
@@ -20,9 +21,11 @@ function Logement() {
     document.title = `${loader.title} - Kasa`
   }, [])
 
-  console.log(loader)
-
-  return <p>Logement</p>
+  return (
+    <>
+      <Carrousel album={loader.pictures} />
+    </>
+  )
 }
 
 export default Logement
