@@ -26,6 +26,11 @@
   grid-gap: calc(map-get($radius, header) * 2);
   grid-auto-rows: minmax(350px, auto);
 
+  & a {
+    display: inherit;
+    text-decoration: none;
+  }
+
   @include mobile {
     padding: 0;
     background-color: unset;
