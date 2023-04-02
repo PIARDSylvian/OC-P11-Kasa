@@ -12,15 +12,26 @@
   color: map-get($font-color, secondary);
 
   &::after {
-    content: '>';
+    background-image: url(../../assets/nav-arrow-down.svg);
+    background-size: map-get($margin, primary) map-get($margin, primary);
     display: inline-block;
-    transform: rotate(90deg);
+    width: map-get($margin, secondary);
+    height: map-get($margin, secondary);
+    background-position: center;
+    content: '';
     transition: all 1s ease;
-    transition: 1s;
+    transform-origin: center;
+    filter: invert(98%) sepia(5%) saturate(240%) hue-rotate(327deg)
+      brightness(118%) contrast(100%);
+
+    @include mobile {
+      width: map-get($margin, secondary-mobil);
+      height: map-get($margin, secondary-mobil);
+    }
   }
 
   &.open::after {
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
   }
 
   @include mobile {

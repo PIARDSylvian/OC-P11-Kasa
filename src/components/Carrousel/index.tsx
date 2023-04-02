@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import style from './style.module.scss'
 import React from 'react'
+import arrow_left from '../../assets/nav-arrow-left.svg'
+import arrow_right from '../../assets/nav-arrow-right.svg'
 
 type CarrouselProps = {
   album: Array<string>
@@ -31,7 +33,9 @@ function Carrousel({ album }: CarrouselProps) {
   }
   return (
     <div className={style.carrousel} tabIndex={0} onKeyDown={handleKeyDown}>
-      <button onClick={() => ChangeIndex(index - 1)}>{'<'}</button>
+      <button onClick={() => ChangeIndex(index - 1)}>
+        <img src={arrow_left} alt="arrow_left" />
+      </button>
       <ul>
         {album.map((url, idx) => (
           <li
@@ -47,7 +51,9 @@ function Carrousel({ album }: CarrouselProps) {
           </li>
         ))}
       </ul>
-      <button onClick={() => ChangeIndex(index + 1)}>{'>'}</button>
+      <button onClick={() => ChangeIndex(index + 1)}>
+        <img src={arrow_right} alt="arrow_right" />
+      </button>
     </div>
   )
 }
