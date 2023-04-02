@@ -1,0 +1,23 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+.tags__wrapper {
+  margin: map-get($margin, secondary) 0;
+  @include flex($flex-wrap: wrap);
+
+  p {
+    background-color: map-get($font-color, primary);
+    color: map-get($font-color, secondary);
+    font-size: map-get($font-size, nav-mobil);
+    min-width: 115px;
+    padding: map-get($radius, mobil) map-get($radius, mobil)
+      calc(map-get($radius, mobil) - 3px);
+    text-align: center;
+    border-radius: map-get($radius, secondary);
+    margin: 0 map-get($radius, secondary) map-get($radius, mobil) 0;
+
+    @include mobile {
+      border-radius: map-get($radius, mobil);
+    }
+  }
+}
