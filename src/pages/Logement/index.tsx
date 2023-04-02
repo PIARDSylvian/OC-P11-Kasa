@@ -4,6 +4,7 @@ import Carrousel from '../../components/Carrousel'
 import style from './style.module.scss'
 import Rating from '../../components/Rating'
 import Tags from '../../components/Tags'
+import Collapse from '../../components/Collapse'
 
 type loader = {
   cover: string
@@ -47,6 +48,20 @@ function Logement() {
           <Rating rate={Number(loader.rating)} />
         </div>
       </header>
+      <div className={style.collapse_wrapper}>
+        <div>
+          <Collapse
+            collapseTitle={'Description'}
+            collapseList={[loader.description]}
+          />
+        </div>
+        <div>
+          <Collapse
+            collapseTitle={'Équipements'}
+            collapseList={loader.equipments}
+          />
+        </div>
+      </div>
     </section>
   )
 }
