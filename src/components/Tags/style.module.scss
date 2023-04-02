@@ -11,7 +11,7 @@
     font-size: map-get($font-size, nav-mobil);
     min-width: 115px;
     padding: map-get($radius, mobil) map-get($radius, mobil)
-      calc(map-get($radius, mobil) - 3px);
+      calc(map-get($radius, mobil) - 1px);
     text-align: center;
     border-radius: map-get($radius, secondary);
     margin: 0 map-get($radius, secondary) map-get($radius, mobil) 0;
