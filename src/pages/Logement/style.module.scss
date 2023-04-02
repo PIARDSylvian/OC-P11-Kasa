@@ -1,0 +1,88 @@
+@import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
+
+.section {
+  color: map-get($font-color, primary);
+  font-size: map-get($font-size, text);
+
+  @include mobile {
+    font-size: map-get($font-size, text-mobil);
+  }
+
+  header {
+    & > div {
+      width: 100%;
+    }
+    padding: map-get($margin, secondary) 0;
+    @include flex($justify-content: space-between);
+    @include mobile {
+      padding: map-get($margin, secondary-mobil) 0;
+      flex-direction: column;
+    }
+  }
+  h1 {
+    color: map-get($font-color, primary);
+    font-size: map-get($font-size, title);
+    margin-bottom: map-get($radius, secondary);
+
+    @include mobile {
+      font-size: map-get($font-size, title-mobil);
+    }
+  }
+}
+
+.header__right {
+  @include flex(
+    $flex-wrap: wrap,
+    $justify-content: space-between,
+    $align-content: space-between
+  );
+
+  @include mobile {
+    max-width: none;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+  max-width: 150px;
+
+  &__host {
+    width: calc(100% - 64px);
+    @include flex($flex-direction: column, $justify-content: space-evenly);
+
+    @include mobile {
+      height: auto;
+      justify-content: space-between;
+      text-align: right;
+      padding-right: 1em;
+      order: 2;
+    }
+
+    p {
+      word-break: break-all;
+    }
+  }
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    @include mobile {
+      width: 32px;
+      height: 32px;
+      order: 3;
+    }
+  }
+
+  p {
+    width: 100%;
+    @include mobile {
+      order: 1;
+    }
+  }
+
+  div:last-child {
+    align-self: center;
+  }
+}
