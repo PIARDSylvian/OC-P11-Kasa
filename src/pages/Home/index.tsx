@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import style from './style.module.scss'
 import Banner from '../../components/Banner'
 import Card from '../../components/Card'
@@ -17,11 +18,12 @@ function Home() {
       </Banner>
       <div className={style.logements_wrapper}>
         {data.map((logement) => (
-          <Card
+          <Link
             key={`logement-${logement.id}`}
-            title={logement.title}
-            image={logement.cover}
-          />
+            to={`/logement/${logement.title}-${logement.id}`}
+          >
+            <Card title={logement.title} image={logement.cover} />
+          </Link>
         ))}
       </div>
     </section>

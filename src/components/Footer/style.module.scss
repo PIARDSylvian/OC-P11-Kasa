@@ -1,10 +1,15 @@
 @import '../../saas/utils/variables';
+@import '../../saas/utils/mixin';
 
 .footer {
   background-color: map-get($background-color, ternary);
   text-align: center;
   color: map-get($font-color, secondary);
   margin: calc(map-get($margin, secondary-mobil) * 2) -100px 0;
+
+  @include mobile {
+    margin: calc(map-get($margin, secondary-mobil) * 2) -20px 0;
+  }
 
   p {
     padding-bottom: calc(map-get($margin, secondary-mobil) * 2);
