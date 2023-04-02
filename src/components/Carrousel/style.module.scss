@@ -4,13 +4,13 @@
 .carrousel {
   display: flex;
   position: relative;
-  max-height: 415px;
+  height: 415px;
   border-radius: map-get($radius, header);
   overflow: hidden;
 
   @include mobile {
     border-radius: map-get($radius, secondary);
-    max-height: 255px;
+    height: 255px;
   }
 
   button {
