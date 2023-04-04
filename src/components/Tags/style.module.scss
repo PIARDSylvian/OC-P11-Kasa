@@ -2,7 +2,7 @@
 @import '../../saas/utils/mixin';
 
 .tags__wrapper {
-  margin: map-get($margin, secondary) 0;
+  margin-top: map-get($margin, primary);
   @include flex($flex-wrap: wrap);
 
   p {
@@ -14,7 +14,7 @@
       calc(map-get($radius, mobil) - 1px);
     text-align: center;
     border-radius: map-get($radius, secondary);
-    margin: 0 map-get($radius, secondary) map-get($radius, mobil) 0;
+    margin: map-get($radius, mobil) map-get($margin, secondary) 0 0;
 
     @include mobile {
       border-radius: map-get($radius, mobil);
