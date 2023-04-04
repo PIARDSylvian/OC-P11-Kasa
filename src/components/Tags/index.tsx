@@ -1,10 +1,10 @@
 import style from './style.module.scss'
 
-type tags = {
+type TagsType = {
   tags: Array<string>
 }
 
-function Tags({ tags }: tags) {
+function Tags({ tags }: TagsType) {
   return (
     <div className={style.tags__wrapper}>
       {tags.map((tag, idx) => (

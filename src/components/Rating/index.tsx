@@ -1,12 +1,12 @@
 import style from './style.module.scss'
 import star from '../../assets/star.svg'
 
-type rate = {
+type RateType = {
   rate: number
 }
 
 const loop = 5
-function Rating({ rate }: rate) {
+function Rating({ rate }: RateType) {
   const stars = []
   for (let i = 0; i < loop; i++) {
     if (rate <= i) {

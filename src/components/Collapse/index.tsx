@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import style from './style.module.scss'
 
-type CollapseProps = {
+type CollapseType = {
   collapseTitle: string
   collapseList: Array<string>
 }
 
-function Collapse({ collapseTitle, collapseList }: CollapseProps) {
+function Collapse({ collapseTitle, collapseList }: CollapseType) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>

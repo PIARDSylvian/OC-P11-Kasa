@@ -4,11 +4,11 @@ import React from 'react'
 import arrow_left from '../../assets/nav-arrow-left.svg'
 import arrow_right from '../../assets/nav-arrow-right.svg'
 
-type CarrouselProps = {
+type CarrouselType = {
   album: Array<string>
 }
 
-function Carrousel({ album }: CarrouselProps) {
+function Carrousel({ album }: CarrouselType) {
   const [index, setIndex] = useState(0)
   const ChangeIndex = (index: number) =>
     index > album.length - 1

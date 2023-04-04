@@ -2,28 +2,28 @@ import { ReactNode } from 'react'
 import style from './style.module.scss'
 import styled from 'styled-components'
 
-type BannerProps = {
+type BannerType = {
   height: number
   mobileHeight: number
   cover: string
   children: ReactNode
 }
 
-type style = {
+type StyleType = {
   url: string
   desktop: number
   mobile: number
 }
 
 const Header = styled.header`
-  background: no-repeat url(${(props: style) => props.url}) center/cover;
-  height: ${(props: style) => props.desktop}px;
+  background: no-repeat url(${(props: StyleType) => props.url}) center/cover;
+  height: ${(props: StyleType) => props.desktop}px;
   @media screen and (max-width: 800px) {
-    height: ${(props: style) => props.mobile}px;
+    height: ${(props: StyleType) => props.mobile}px;
   }
 `
 
-function Banner({ height, mobileHeight, cover, children }: BannerProps) {
+function Banner({ height, mobileHeight, cover, children }: BannerType) {
   return (
     <Header
       className={style.header}

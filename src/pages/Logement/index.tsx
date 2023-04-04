@@ -6,7 +6,7 @@ import Rating from '../../components/Rating'
 import Tags from '../../components/Tags'
 import Collapse from '../../components/Collapse'
 
-type loader = {
+type LoaderType = {
   cover: string
   description: string
   equipments: Array<string>
@@ -23,8 +23,7 @@ type loader = {
 }
 
 function Logement() {
-  const loader = useLoaderData() as loader
-  console.log(loader)
+  const loader = useLoaderData() as LoaderType
   useEffect(() => {
     document.title = `${loader.title} - Kasa`
   }, [])
