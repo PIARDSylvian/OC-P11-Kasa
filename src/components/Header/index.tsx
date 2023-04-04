@@ -1,8 +1,13 @@
 import { Link, NavLink } from 'react-router-dom'
 import logo from '../../assets/kasa-logo.png'
-
+import styled from 'styled-components'
 import style from './style.module.scss'
-import './style.scss'
+
+const StyledNavLink = styled(NavLink)`
+  &.active {
+    text-decoration: underline;
+  }
+`
 
 function Header() {
   return (
@@ -13,10 +18,10 @@ function Header() {
       <nav>
         <ul className={style.nav_list}>
           <li>
-            <NavLink to="/">Accueil</NavLink>
+            <StyledNavLink to="/">Accueil</StyledNavLink>
           </li>
           <li>
-            <NavLink to="/a-propos">A propos</NavLink>
+            <StyledNavLink to="/a-propos">A propos</StyledNavLink>
           </li>
         </ul>
       </nav>
