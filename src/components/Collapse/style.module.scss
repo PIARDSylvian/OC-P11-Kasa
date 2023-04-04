@@ -63,7 +63,7 @@
   }
 
   &.open {
-    height: auto;
+    height: calc(100% - ((map-get($margin, secondary) * 5)));
     max-height: 9999vh;
     opacity: 1;
     background-color: map-get($background-color, primary);
@@ -73,6 +73,7 @@
     @include mobile {
       padding-top: calc(map-get($radius, secondary) * 3);
       padding-bottom: map-get($radius, secondary);
+      height: auto;
     }
 
     li {
