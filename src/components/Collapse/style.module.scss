@@ -10,6 +10,7 @@
   border-radius: map-get($radius, secondary);
   padding: map-get($margin, secondary);
   color: map-get($font-color, secondary);
+  font-family: inherit;
 
   &::after {
     background-image: url(../../assets/nav-arrow-down.svg);
