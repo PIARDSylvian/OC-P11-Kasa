@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useLoaderData } from 'react-router-dom'
-import Carrousel from '../../components/Carrousel'
+import Gallery from '../../components/Gallery'
 import style from './style.module.scss'
 import Rating from '../../components/Rating'
 import Tags from '../../components/Tags'
@@ -30,7 +30,7 @@ function Logement() {
 
   return (
     <section className={style.section}>
-      <Carrousel album={loader.pictures} />
+      <Gallery album={loader.pictures} />
       <header>
         <div>
           <h1>{loader.title}</h1>

@@ -4,13 +4,13 @@ import React from 'react'
 import arrow_left from '../../assets/nav-arrow-left.svg'
 import arrow_right from '../../assets/nav-arrow-right.svg'
 
-type CarrouselType = {
+type GalleryType = {
   album: Array<string>
 }
 
-function Carrousel({ album }: CarrouselType) {
+function Gallery({ album }: GalleryType) {
   const [index, setIndex] = useState(0)
-  const ChangeIndex = (index: number) =>
+  const changeIndex = (index: number) =>
     index > album.length - 1
       ? setIndex(0)
       : index < 0
@@ -19,7 +19,7 @@ function Carrousel({ album }: CarrouselType) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      ChangeIndex(index + 1)
+      changeIndex(index + 1)
     }, 3000)
     return () => {
       clearInterval(interval)
@@ -28,14 +28,16 @@ function Carrousel({ album }: CarrouselType) {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key == 'Tab' || event.key == 'Shift') return
     event.preventDefault()
-    if (event.key == 'ArrowRight') ChangeIndex(index + 1)
-    else if (event.key == 'ArrowLeft') ChangeIndex(index - 1)
+    if (event.key == 'ArrowRight') changeIndex(index + 1)
+    else if (event.key == 'ArrowLeft') changeIndex(index - 1)
   }
   return (
     <div className={style.carrousel} tabIndex={0} onKeyDown={handleKeyDown}>
-      <button onClick={() => ChangeIndex(index - 1)}>
-        <img src={arrow_left} alt="arrow_left" />
-      </button>
+      {album.length > 1 && (
+        <button onClick={() => changeIndex(index - 1)}>
+          <img src={arrow_left} alt="arrow_left" />
+        </button>
+      )}
       <ul>
         {album.map((url, idx) => (
           <li
@@ -45,17 +47,21 @@ function Carrousel({ album }: CarrouselType) {
             }`}
           >
             <img src={url} alt={`carrousel-${idx}`} />
-            <p>
-              {index + 1} / {album.length}
-            </p>
+            {album.length > 1 && (
+              <p>
+                {index + 1} / {album.length}
+              </p>
+            )}
           </li>
         ))}
       </ul>
-      <button onClick={() => ChangeIndex(index + 1)}>
-        <img src={arrow_right} alt="arrow_right" />
-      </button>
+      {album.length > 1 && (
+        <button onClick={() => changeIndex(index + 1)}>
+          <img src={arrow_right} alt="arrow_right" />
+        </button>
+      )}
     </div>
   )
 }
 
-export default Carrousel
+export default Gallery
