@@ -22,8 +22,14 @@ type LoaderType = {
   title: string
 }
 
-function Logement() {
+/**
+ * Render Logement page
+ *
+ * @returns JSX.Element
+ */
+function Logement(): JSX.Element {
   const loader = useLoaderData() as LoaderType
+  // Set title page on first load
   useEffect(() => {
     document.title = `${loader.title} - Kasa`
   }, [])

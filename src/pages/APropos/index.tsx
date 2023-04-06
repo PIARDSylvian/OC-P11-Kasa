@@ -4,16 +4,20 @@ import style from './style.module.scss'
 import Banner from '../../components/Banner'
 import Cover from '../../assets/a-propos-header.jpg'
 
-function APropos() {
+/**
+ * Render page APropos
+ *
+ * @returns JSX.Element
+ */
+function APropos(): JSX.Element {
+  // Set title page on first load
   useEffect(() => {
     document.title = 'A-propos - Kasa'
   }, [])
 
   return (
     <section>
-      <Banner height={223} mobileHeight={111} cover={Cover}>
-        {null}
-      </Banner>
+      <Banner height={223} mobileHeight={111} cover={Cover}></Banner>
       <div className={style.collapse_wrapper}>
         <Collapse
           collapseTitle="Fiabilité"

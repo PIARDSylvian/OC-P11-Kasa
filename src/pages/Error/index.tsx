@@ -2,7 +2,13 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import style from './style.module.scss'
 
-function Error() {
+/**
+ * Render page Error
+ *
+ * @returns JSX.Element
+ */
+function Error(): JSX.Element {
+  // Set title page on first load
   useEffect(() => {
     document.title = '404 Error - Kasa'
   }, [])

@@ -6,7 +6,13 @@ import Card from '../../components/Card'
 import data from '../../../backend/data.json'
 import cover from '../../assets/home-header.jpg'
 
-function Home() {
+/**
+ * Render page Home
+ *
+ * @returns JSX.Element
+ */
+function Home(): JSX.Element {
+  // Set title page on first load
   useEffect(() => {
     document.title = 'Accueil - Kasa'
   }, [])
@@ -17,6 +23,7 @@ function Home() {
         <h1>Chez vous, partout et ailleurs</h1>
       </Banner>
       <div className={style.logements_wrapper}>
+        {/* for each logement create Card wrapped with Link */}
         {data.map((logement) => (
           <Link
             key={`logement-${logement.id}`}
