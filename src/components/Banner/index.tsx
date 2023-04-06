@@ -6,7 +6,7 @@ type BannerType = {
   height: number
   mobileHeight: number
   cover: string
-  children: ReactNode
+  children?: ReactNode //not required property
 }
 
 type StyleType = {
