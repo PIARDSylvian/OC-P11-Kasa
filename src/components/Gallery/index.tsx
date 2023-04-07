@@ -8,14 +8,26 @@ type GalleryType = {
   album: Array<string>
 }
 
-function Gallery({ album }: GalleryType) {
+/**
+ * Gallery component
+ *
+ * @param album
+ *
+ * @returns JSX.Element
+ */
+function Gallery({ album }: GalleryType): JSX.Element {
   const [index, setIndex] = useState(0)
+  /**
+   * Change Index fuction
+   *
+   * @param index :int
+   */
   const changeIndex = (index: number) =>
-    index > album.length - 1
-      ? setIndex(0)
-      : index < 0
-      ? setIndex(album.length - 1)
-      : setIndex(index)
+    index > album.length - 1 //if index > album length
+      ? setIndex(0) // set index to 0
+      : index < 0 // else if index < 0
+      ? setIndex(album.length - 1) // set index with album.length
+      : setIndex(index) // else set index with this index
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,6 +45,7 @@ function Gallery({ album }: GalleryType) {
   }
   return (
     <div className={style.carrousel} tabIndex={0} onKeyDown={handleKeyDown}>
+      {/* if album length > 1 show button  */}
       {album.length > 1 && (
         <button onClick={() => changeIndex(index - 1)}>
           <img src={arrow_left} alt="arrow_left" />
@@ -47,6 +60,7 @@ function Gallery({ album }: GalleryType) {
             }`}
           >
             <img src={url} alt={`carrousel-${idx}`} />
+            {/* if album length > 1 show counter  */}
             {album.length > 1 && (
               <p>
                 {index + 1} / {album.length}
@@ -55,6 +69,7 @@ function Gallery({ album }: GalleryType) {
           </li>
         ))}
       </ul>
+      {/* if album length > 1 show button  */}
       {album.length > 1 && (
         <button onClick={() => changeIndex(index + 1)}>
           <img src={arrow_right} alt="arrow_right" />

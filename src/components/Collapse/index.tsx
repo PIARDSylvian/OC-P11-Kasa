@@ -6,7 +6,15 @@ type CollapseType = {
   collapseList: Array<string>
 }
 
-function Collapse({ collapseTitle, collapseList }: CollapseType) {
+/**
+ * Collapse component
+ *
+ * @param collapseTitle // text for button
+ * @param collapseList // list to colapse
+ *
+ * @returns JSX.Element
+ */
+function Collapse({ collapseTitle, collapseList }: CollapseType): JSX.Element {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>

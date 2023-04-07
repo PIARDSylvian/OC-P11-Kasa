@@ -14,7 +14,15 @@ const Article = styled.article`
   background: no-repeat url(${(props: CoverType) => props.url}) center/cover;
 `
 
-function Card({ title, image }: LogementType) {
+/**
+ * Card component
+ *
+ * @param title // title
+ * @param image // background image
+ *
+ * @returns JSX.Element
+ */
+function Card({ title, image }: LogementType): JSX.Element {
   return (
     <Article className={style.logement} url={image}>
       <h1>{title}</h1>

@@ -5,10 +5,16 @@ type RateType = {
   rate: number
 }
 
-const loop = 5
-function Rating({ rate }: RateType) {
+/**
+ * Rating component
+ *
+ * @param rate
+ *
+ * @returns JSX.Element
+ */
+function Rating({ rate }: RateType): JSX.Element {
   const stars = []
-  for (let i = 0; i < loop; i++) {
+  for (let i = 0; i < 5; i++) {
     if (rate <= i) {
       stars.push(
         <img src={star} key={`star-${i}`} alt="star" className={style.def} />

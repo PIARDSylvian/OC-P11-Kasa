@@ -4,7 +4,14 @@ type TagsType = {
   tags: Array<string>
 }
 
-function Tags({ tags }: TagsType) {
+/**
+ * Tags component
+ *
+ * @param tags // list of tag
+ *
+ * @returns JSX.Element
+ */
+function Tags({ tags }: TagsType): JSX.Element {
   return (
     <div className={style.tags__wrapper}>
       {tags.map((tag, idx) => (

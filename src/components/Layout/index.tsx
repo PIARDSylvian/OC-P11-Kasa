@@ -3,7 +3,12 @@ import Header from '../Header'
 import Footer from '../Footer'
 import './style.scss'
 
-function Layout() {
+/**
+ * Layout component
+ *
+ * @returns JSX.Element
+ */
+function Layout(): JSX.Element {
   return (
     <>
       <Header />

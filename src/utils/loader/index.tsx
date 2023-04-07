@@ -4,7 +4,14 @@ type params = {
   logementId: string
 }
 
-function loader({ logementId }: params) {
+/**
+ * Loader Function
+ *
+ * @param logementId :string
+ *
+ * @returns Logement Object OR Undefined
+ */
+function loader({ logementId }: params): Object {
   return data.filter(
     (logement) => `${logement.title}-${logement.id}` === logementId
   )[0]

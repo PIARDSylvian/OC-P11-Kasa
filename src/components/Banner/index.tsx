@@ -23,7 +23,22 @@ const Header = styled.header`
   }
 `
 
-function Banner({ height, mobileHeight, cover, children }: BannerType) {
+/**
+ * Banner components
+ *
+ * @param height // height in desktop
+ * @param mobileHeight // height in mobile
+ * @param cover // background image
+ * @param children // Content
+ *
+ * @returns JSX.Element
+ */
+function Banner({
+  height,
+  mobileHeight,
+  cover,
+  children,
+}: BannerType): JSX.Element {
   return (
     <Header
       className={style.header}

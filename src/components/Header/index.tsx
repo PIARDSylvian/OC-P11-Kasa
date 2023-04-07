@@ -9,7 +9,12 @@ const StyledNavLink = styled(NavLink)`
   }
 `
 
-function Header() {
+/**
+ * Header component
+ *
+ * @returns JSX.Element
+ */
+function Header(): JSX.Element {
   return (
     <header className={style.header}>
       <Link to="/">
