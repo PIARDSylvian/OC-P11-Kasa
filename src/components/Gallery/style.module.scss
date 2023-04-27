@@ -52,6 +52,10 @@
       color: map-get($font-color, secondary);
       left: 50%;
       transform: translateX(-50%);
+
+      @include mobile {
+        display: none;
+      }
     }
   }
 
